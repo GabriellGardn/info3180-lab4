@@ -141,6 +141,7 @@ def get_image(filename):
 
 
 @app.route('/files')
+@login_required
 def files():
 
     images = get_uploaded_images()

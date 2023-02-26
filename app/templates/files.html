@@ -1,5 +1,12 @@
-<ul>
+{% extends 'base.html' %}
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<div class="image-grid">
     {% for image in images %}
-      <li><img src="{{ url_for('get_image', filename=image) }}"></li>
+    <img src="{{ url_for('get_image', filename=image) }}" alt="{{ filename }}">
     {% endfor %}
-  </ul>
+</div>
+
+{% endblock %}
